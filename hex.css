@@ -1,0 +1,118 @@
+html, body {
+    /* font-family: helvetica, sans-serif; */
+    font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+    /* font-family: ‘Lucida Console’, Monaco, monospace; */
+    /* font-family: Century Gothic, sans-serif; */
+    background-color:black;
+    color: white;
+    padding: 0px;
+    margin: 0px auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    float: center;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+}
+
+canvas {
+    display: block;
+    margin: 0px auto;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 250px;
+    left: 120px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 3em;
+    font-size-adjust: 0.7;
+    letter-spacing: -10px;
+    float: left;
+}
+
+@keyframes rotate {
+    0%{ transform: rotate(60deg); }
+    33%{ transform: rotate(90deg); }
+    66%{ transform: rotate(180deg); }
+    100%{ transform: rotate(120deg); }
+}
+
+@keyframes rotatee {
+    0%{ transform: rotate(-60deg); }
+    33%{ transform: rotate(-90deg); }
+    66%{ transform: rotate(-180deg); }
+    100%{ transform: rotate(-120deg); }
+}
+
+@keyframes shake {
+    0%{ transform: translate(0px, 5px); }
+    100%{ transform: translate(0px, 0px); }
+}
+
+.spin {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 60% 52% 0px;
+}
+
+.spinrev {
+  animation-name: rotatee;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 60% 52% 0px;
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 0.01s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.left {
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.alternate span:nth-child(1) {
+    color: #aaff00;
+}
+.alternate span:nth-child(2) {
+    color: #ffffff;
+}
+.alternate span:nth-child(3) {
+    color: #888888;
+}
+.alternate span:nth-child(4) {
+    color: #222222;
+}
+.alternate span:nth-child(5) {
+    color: #3c444e;
+}
+.alternate span:nth-child(6) {
+    color: #a403da;
+}
+.alternate span:nth-child(7) {
+    color: #a60b69;
+}
+.alternate span:nth-child(8) {
+    color: #888888;
+}
+.alternate span:nth-child(9) {
+    color: #aaaaff;
+}
+.alternate span:nth-child(10) {
+    color: #ffaa00;
+}
