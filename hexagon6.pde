@@ -35,8 +35,8 @@ class Hexagon {
         pos_y = pos[1];
 	pos_off_x = pos_offset[0];
 	pos_off_y = pos_offset[1];
-        //smaller multiplier => smaller elements  
-        multiplier = 15;
+        //smaller multiplier => smaller elements
+        multiplier = max(min(15,screenWidth/60),5);
         x = scale.x * multiplier;
         y = scale.y * multiplier;
         pos_x = pos_x * scale.x * multiplier + pos_off_x;
