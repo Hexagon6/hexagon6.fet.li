@@ -1,1 +1,1 @@
-# hexagon6.fet.li
+http://hexagon6.fet.li
