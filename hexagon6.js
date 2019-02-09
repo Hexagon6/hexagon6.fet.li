@@ -85,30 +85,30 @@ function draw() {
     y: GRID_Y,
     t: GRID_X * GRID_Y
   };
-  for (k = 0; k < grid.y * 2; k = k + 4) {
-    for (i = 0; i < grid.x * 2; i = i + 2) {
-      if (!(i == 0 && k == 0) && !(i == 0 && k == 4)) {
+  for (y = 0; y < grid.y * 2; y = y + 4) {
+    for (x = 0; x < grid.x * 2; x = x + 2) {
+      if (!(x == 0 && y == 0) && !(x == 0 && y == 4)) {
         h0 = new Hexagon(
-          [i, k],
+          [x, y],
           scale,
-          colors[color_indices[i / 2 + (k / 2) * grid.x]],
+          colors[color_indices[x / 2 + (x / 2) * grid.x]],
           [
             3 * sin(3.14 * m + 10) + temp * random() + tan(m) / m,
-            abs(tan(60 * m + 0.01 * i)) + temp * random()
+            abs(tan(60 * m + 0.01 * x)) + temp * random()
           ]
         );
       }
     }
-    if (k < grid.y * 2 - 3) {
-      for (i = 0; i < grid.x * 2; i = i + 2) {
-        if (!(i == 2 && k == 0)) {
+    if (y < grid.y * 2 - 3) {
+      for (x = 0; x < grid.x * 2; x = x + 2) {
+        if (!(x == 2 && y == 0)) {
           h0 = new Hexagon(
-            [i + 1, k + 2],
+            [x + 1, y + 2],
             scale,
-            colors[color_indices[i / 2 + ((k + 2) / 2) * grid.x]],
+            colors[color_indices[x / 2 + ((y + 2) / 2) * grid.x]],
             [
               -2.5 * sin(m) + temp * random() + tan(m) / m / 2,
-              abs(tan(59.99 * m - 0.01 * i)) + temp * random()
+              abs(tan(59.99 * m - 0.01 * x)) + temp * random()
             ]
           );
         }
