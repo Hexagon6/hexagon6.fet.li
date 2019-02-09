@@ -51,7 +51,7 @@ class Hexagon {
 
     fill(color);
     beginShape(TRIANGLE_FAN);
-    Array({ from: points }).map(n =>
+    Array.from({ length: points }).map((_, n) =>
       vertex(
         pos_x + cos((n * TWO_PI + PI) / points) * r,
         pos_y + sin((n * TWO_PI + PI) / points) * r
