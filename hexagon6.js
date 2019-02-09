@@ -45,43 +45,19 @@ class Hexagon {
     pos_x = pos_x * scale.x * multiplier + pos_off_x;
     pos_y = pos_y * scale.y * multiplier + pos_off_y;
     noStroke();
-    const hx6 = [
-      1,
-      0, //first triangle
-      0,
-      0.6, //
-      2,
-      0.6, //                    //rectangle part1
-      0,
-      2.0, //second triangle     //rectangle part2
-      2,
-      2.0, //
-      1,
-      2.6 //
-    ];
+
+    let r = 50;
+    let points = 6;
+
     fill(color);
-    triangle(
-      hx6[0] * x + pos_x,
-      hx6[1] * x + pos_y,
-      hx6[2] * x + pos_x,
-      ceil(hx6[3] * x + pos_y),
-      hx6[4] * x + pos_x,
-      ceil(hx6[5] * x + pos_y)
+    beginShape(TRIANGLE_FAN);
+    Array({ from: points }).map(n =>
+      vertex(
+        pos_x + cos((n * TWO_PI + PI) / points) * r,
+        pos_y + sin((n * TWO_PI + PI) / points) * r
+      )
     );
-    rect(
-      floor(hx6[2] * x + pos_x),
-      ceil(hx6[3] * x + pos_y),
-      ceil((hx6[4] - hx6[2]) * x),
-      ceil((hx6[9] - hx6[3]) * x)
-    );
-    triangle(
-      hx6[6] * x + pos_x,
-      ceil(hx6[7] * x + pos_y),
-      hx6[8] * x + pos_x,
-      ceil(hx6[9] * x + pos_y),
-      hx6[10] * x + pos_x,
-      hx6[11] * x + pos_y
-    );
+    endShape();
   }
 }
 
